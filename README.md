@@ -297,6 +297,19 @@ These are instructions for maintainers about how to release new versions. (Mainl
 > twine upload dist/pydensecrf-VERSION_NUM.tar.gz
 ```
 
+Under Windows, instead do:
+
+> 1. Install visual studio with VC++ build toolset;
+> 2. Install desired python version, say python 3.11.9;
+> 3. Create venv and activate it;
+> 4. Execute:
+> 
+> ```sh
+> pip install -q build
+> python -m build
+> ```
+> 5. Wheel file will be created at "dist/" directory.
+
 And that's it. At some point, it would be cool to automate this on [TravisCI](https://docs.travis-ci.com/user/deployment/pypi/), but not worth it yet.
 At that point, looking into [creating "manylinux" wheels](https://github.com/pypa/python-manylinux-demo) might be nice, too.
 
